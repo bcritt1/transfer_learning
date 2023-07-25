@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 #SBATCH --job-name=training
-#SBATCH --output=/home/users/%u/out/training.%j.out
-#SBATCH --error=/home/users/%u/err/training.%j.err
+#SBATCH --output=/home/%u/out/training.%j.out
+#SBATCH --error=/home/%u/err/training.%j.err
 #SBATCH --partition=gpu
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
@@ -10,7 +10,6 @@
 #SBATCH --gres=gpu:1
 #SBATCH --mem=64GB
 
-module load python/3.9.0
 pip3 install transformers
 pip3 install --pre torch -f https://download.pytorch.org/whl/nightly/cpu/torch_nightly.html
 python3 training.py

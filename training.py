@@ -4,7 +4,7 @@ from transformers import BertTokenizer, BertModel
 
 # Load the corpus
 user = os.getenv('USER')
-corpusdir = '/scratch/users/{}/corpus/'.format(user)
+corpusdir = '/farmshare/learning/data/emerson/'
 corpus = []
 for infile in os.listdir(corpusdir):
     with open(corpusdir + infile, errors='ignore') as fin:
@@ -30,7 +30,6 @@ with torch.no_grad():
 
 # Process the encoded representations as needed for your downstream task
 # For example, you can use the encoded layers as input to another model or perform clustering, similarity calculations, etc.
-
 # Save the encoded representations
 output_dir = "/scratch/users/{}/models/".format(user)
 os.makedirs(output_dir, exist_ok=True)
