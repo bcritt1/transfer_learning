@@ -31,6 +31,6 @@ with torch.no_grad():
 # Process the encoded representations as needed for your downstream task
 # For example, you can use the encoded layers as input to another model or perform clustering, similarity calculations, etc.
 # Save the encoded representations
-output_dir = "/scratch/users/{}/models/".format(user)
+output_dir = "/scratch/users/{}/outputs/".format(user)
 os.makedirs(output_dir, exist_ok=True)
 torch.save(encoded_layers, os.path.join(output_dir, "encoded_layers.pt"))
